@@ -1,4 +1,4 @@
-# Name: Adrienne Samos
+# Name: Elliot Mai
 # Assignment: Unit 9 Assignment
 # Date: Mar 9. 2026
 
@@ -27,8 +27,12 @@ model = models.Sequential([
     
     layers.Conv2D(filters=32, kernel_size=(3, 3), activation='relu'),
     layers.MaxPooling2D(pool_size=2, strides=2),
-    # Repeat the convolutional and pooling layers as needed to increase the depth of the model
-    
+    # CHANGE: Repeating the convolutional and pooling layers to increase the depth of the model
+    layers.Conv2D(filters=64, kernel_size=(3, 3), activation='relu'),
+    layers.MaxPooling2D(pool_size=2, strides=2),
+    layers.Conv2D(filters=128, kernel_size=(3, 3), activation='relu'),
+    layers.MaxPooling2D(pool_size=2, strides=2),
+
     layers.Flatten(),
     layers.Dense(64, activation='relu'),
     layers.Dense(10, activation='softmax')
